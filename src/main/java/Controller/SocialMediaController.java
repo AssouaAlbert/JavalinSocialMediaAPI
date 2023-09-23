@@ -16,7 +16,14 @@ public class SocialMediaController {
      */
     public Javalin startAPI() {
         Javalin app = Javalin.create();
-        app.get("example-endpoint", this::exampleHandler);
+        app.post("/register", this::exampleHandler);
+        app.post("/login", this::exampleHandler);
+        app.post("/messages", this::exampleHandler);
+        app.get("/messages", this::exampleHandler);
+        app.get("/messages/{message_id}", this::exampleHandler);
+        app.delete("/messages/{message_id}", this::exampleHandler);
+        app.patch("/messages/{message_id}", this::exampleHandler);
+        app.get("/accounts/{account_id}/messages", this::exampleHandler);
 
         return app;
     }
