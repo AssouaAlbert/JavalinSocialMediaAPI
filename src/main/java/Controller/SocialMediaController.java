@@ -52,8 +52,7 @@ public class SocialMediaController {
      */
     private void getAllMessagesByUser(Context ctx){
         int account_id = Integer.parseInt(ctx.pathParam("account_id"));
-        List<Message> message = messageService.getByPosedBy(account_id);
-        ctx.status(200).json(message);
+        ctx.status(200).json( messageService.getByPosedBy(account_id));
     }
     private void updateMessage(Context ctx) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
@@ -79,9 +78,7 @@ public class SocialMediaController {
     }
 
     private void getMessages(Context ctx) {
-        List<Message> messages;
-        messages = messageService.getMessages();
-        ctx.status(200).json(messages);
+        ctx.status(200).json(messageService.getMessages());
     }
 
     private void postNewMessage(Context ctx) throws JsonProcessingException {

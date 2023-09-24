@@ -19,15 +19,15 @@ public class ConnectionUtil {
     /**
      * url will represent our connection string. Since this is an in-memory db, we will represent a file location to store the data
      */
-    private static String url = "jdbc:h2:./h2/db";
+    private static String url = "jdbc:mysql://localhost:3306/x";
     /**
      * Default username for connecting to h2
      */
-    private static String username = "sa";
+    private static String username = "root";
     /**
      * Default password for connecting to h2
      */
-    private static String password = "sa";
+    private static String password = "root";
     /**
      * a static object which represents the connection to h2. Because it is static, any DAO interacting
      * with this connection object is referring to the same object.
